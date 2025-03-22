@@ -1,6 +1,6 @@
 👋 Hi, I’m @XinZeng-may  
 🎓 MSc in Management candidate at Ivey Business School, passionate about combining data, strategy, and sustainability.  
-
+I am using Github to record my process of learning programming and codes.
 👀 I’m interested in:
 - Data-driven business analysis  
 - ESG and sustainability analytics  
