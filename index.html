@@ -22,17 +22,35 @@
 @media(max-width:790px){.hero{padding:60px 0 44px}.project-grid{grid-template-columns:1fr}.tracknav{grid-template-columns:1fr 1fr}.intro{font-size:15px}.section{padding:32px 0}.project .visual{min-height:195px}}
 @media(max-width:550px){.wrap{padding:0 19px}.nav-right{gap:11px}.nav-right a{font-size:11px}.nav-right a.external{padding:6px 10px}.nav-right .optional{display:none}.hero h1{font-size:49px}.tracknav{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column;gap:4px}.details{padding:22px}.details h3{font-size:23px}.footer-card{flex-direction:column;align-items:start;padding:25px}.project-grid{gap:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project,.track,.button{transition:none}}
+
+/* Always-visible horizontal project rows, grouped by workstream */
+.project-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+.project{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);min-height:295px}
+.project .visual{min-height:295px}
+.project .details{min-width:0;padding:30px 34px}
+.project .details h3{font-size:clamp(23px,2.6vw,30px)}
+.project .details p{font-size:14px;line-height:1.8}
+.stream-heading{grid-column:1/-1;scroll-margin-top:102px;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:30px 2px 8px}
+.stream-heading h3{font-size:clamp(25px,3vw,34px);margin:9px 0 4px;color:#44324f}
+.stream-heading p{font-size:13px;color:#85798b}
+.stream-count{font-size:12px;white-space:nowrap;padding:7px 14px;background:#f4eaf7;border:1px solid #e9d9ed;border-radius:100px;font-weight:800;color:#86629a}
+.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid #e5d9e7;padding:3px;border-radius:100px;background:white;flex-shrink:0}
+.lang-switch button{border:0;border-radius:100px;background:transparent;color:#81718b;padding:5px 10px;font-size:11px;font-weight:800}
+.lang-switch button[aria-pressed="true"]{background:#82619f;color:#fff}
+@media(max-width:790px){.project{grid-template-columns:1fr}.project .visual{min-height:205px}.project .details{padding:24px}.project-grid{gap:16px}}
+@media(max-width:550px){.nav-right{gap:9px}.nav-right .optional{display:none}.nav-right a.external{font-size:10px;padding:7px 10px}.lang-switch button{padding:5px 8px}.stream-heading{align-items:start}.stream-heading p{max-width:260px}.hero h1{font-size:48px}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap nav"><a class="logo" href="#top">May Zeng<span>.</span></a><nav class="nav-right" aria-label="Main"><a href="#projects">Projects</a><a href="#about" class="optional">About</a><a class="external" href="https://github.com/XinZeng-may" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap"><div class="kicker">MARKET INTELLIGENCE · DATA SCIENCE · BUILDING</div><h1>Data-minded.<br><em>Builder at heart.</em></h1><div class="hero-row"><p class="intro">Hi, I'm <strong>May</strong> — a <strong>Market Intelligence Analyst</strong> and <strong>Ivey Business Analytics</strong> graduate. I love two things: using <strong>machine learning</strong> to find meaningful patterns, and turning everyday ideas into working tools with <strong>AI-assisted coding</strong>.</p><div class="hero-links"><a class="button solid" href="#projects">Explore projects ↓</a><a class="button" href="https://www.linkedin.com/in/xinzeng1006" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
-<div class="tracknav"><a href="#projects" class="track" data-track-link="build"><div><span class="track-k">STREAM / 01</span><h3>✳ Vibe Coding</h3><p>From idea to interactive product · 3 projects</p></div><span class="track-icon">⌘</span></a><a href="#projects" class="track" data-track-link="ml"><div><span class="track-k">STREAM / 02</span><h3>◈ Data & Machine Learning</h3><p>From data to predictions · 2 projects</p></div><span class="track-icon">↗</span></a></div>
+<div class="tracknav"><a href="#vibe-coding" class="track"><div><span class="track-k">STREAM / 01</span><h3>✳ Vibe Coding</h3><p>From idea to interactive product · 3 projects</p></div><span class="track-icon">⌘</span></a><a href="#machine-learning" class="track"><div><span class="track-k">STREAM / 02</span><h3>◈ Data & Machine Learning</h3><p>From data to predictions · 2 projects</p></div><span class="track-icon">↗</span></a></div>
 </div></section>
 <section class="section" id="projects"><div class="wrap"><div class="section-head"><div><div class="label">SELECTED PROJECTS</div><h2 class="section-title">Things I've built & analyzed.</h2></div><p class="section-desc">Explore the work, not a long résumé.</p></div>
-<div class="filters" role="group" aria-label="Filter projects"><button data-filter="all" type="button" aria-pressed="true">All projects · 5</button><button data-filter="build" type="button" aria-pressed="false">✳ Vibe Coding · 3</button><button data-filter="ml" type="button" aria-pressed="false">◈ Data & ML · 2</button></div>
 <div class="project-grid" id="project-grid">
+<div class="stream-heading" id="vibe-coding"><div><span class="label" data-i18n="streamOneCaption">STREAM 01 · CREATIVE DEVELOPMENT</span><h3 data-i18n="streamOneTitle">✳ Vibe Coding</h3><p data-i18n="streamOneDesc">Interactive tools and websites built from everyday ideas.</p></div><span class="stream-count" data-i18n="threeProjects">03 projects</span></div>
+
 <article class="project featured" data-category="build">
 <div class="visual french"><span class="corner">01 / VIBE CODING</span><div class="window"><div class="windowbar"><i></i><i></i><i></i></div><div class="winbody"><span class="overline">LA PAGE 3.0 · FRENCH READING</span><b>Lire. Comprendre. Retenir.</b><div class="french-book"><div><div class="french-line">Je <span class="word">découvre</span> une nouvelle façon d'apprendre.</div><div class="french-line" style="font-size:10px;color:#8c858c">阅读 · 点击句子 · 保存生词</div><div style="margin-top:12px;height:5px;width:90%;background:#eee8ee;border-radius:4px"></div><div style="margin-top:6px;height:5px;width:69%;background:#eee8ee;border-radius:4px"></div></div><div class="definition"><b>découvrir</b><small>verbe · to discover</small><span>发现 · 了解</span><span class="line"></span><span style="font-size:9px">＋ 加入单词本</span></div></div></div></div></div>
 <div class="details"><span class="tag">VIBE CODING · LANGUAGE LEARNING</span><h3>La Page · French Learning Platform</h3><p>An interactive French reading tool with <strong>sentence translation, one-click definitions, saved vocabulary, article library, grammar cards</strong> and writing practice. Built with free dictionary/translation APIs and browser storage.</p><div class="keywords"><span>JavaScript</span><span>Web App</span><span>LocalStorage</span><span>Free APIs</span><span>Prompt Engineering</span></div><div class="actions"><a class="button solid" href="https://enchanting-smakager-17a70f.netlify.app/" target="_blank" rel="noopener noreferrer">Open La Page ↗</a><a class="button" href="https://github.com/XinZeng-may/XinZeng-may/tree/main/la-page" target="_blank" rel="noopener noreferrer">View source ↗</a></div></div>
@@ -44,6 +62,7 @@
 <article class="project" data-category="build">
 <div class="visual dashboard"><span class="corner">03 / VIBE CODING</span><div class="calendar"><div class="cal-top"><span>Team task calendar</span><span>◀ Oct ▶</span></div><div class="cal-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
 <div class="details"><span class="tag">VIBE CODING · PRODUCTIVITY</span><h3>Team Task Dashboard</h3><p>A React calendar-based task dashboard with <strong>user views, task creation, filters, priorities, and progress tracking</strong>.</p><div class="keywords"><span>React</span><span>JavaScript</span><span>UI/UX</span></div><div class="actions"><a class="button" href="https://github.com/XinZeng-may/Tasksplit-projectmanagement-dashboard" target="_blank" rel="noopener noreferrer">View GitHub code ↗</a></div></div></article>
+<div class="stream-heading" id="machine-learning"><div><span class="label" data-i18n="streamTwoCaption">STREAM 02 · ANALYTICAL WORK</span><h3 data-i18n="streamTwoTitle">◈ Data & Machine Learning</h3><p data-i18n="streamTwoDesc">Academic machine learning and predictive modeling work from Ivey.</p></div><span class="stream-count" data-i18n="twoProjects">02 projects</span></div>
 <article class="project" data-category="ml">
 <div class="visual happy"><span class="corner">04 / DATA & MACHINE LEARNING</span><div class="ml-plot"><b>LASSO · VARIABLE SELECTION</b><small>Illustrative coefficients · not actual model outputs</small><svg viewBox="0 0 310 105" aria-label="Illustrative LASSO coefficient chart" role="img"><path class="axis" d="M20 14V88H296M20 51H296"/><g stroke-width="9" stroke-linecap="round"><path d="M49 51H101" stroke="#cfa4cc"/><path d="M49 51H32" stroke="#b8a6db"/><path d="M136 51H200" stroke="#a98bce"/><path d="M221 51H279" stroke="#cfa4cc"/></g><g fill="#918094" font-size="9"><text x="36" y="98">Age</text><text x="122" y="98">Social ties</text><text x="225" y="98">Health</text></g></svg></div></div>
 <div class="details"><span class="tag">IVEY · MACHINE LEARNING</span><h3>Predicting Happiness with LASSO</h3><p>Used <strong>R</strong> to explore predictors of happiness, with multiple imputation, feature preparation, <strong>LASSO logistic regression</strong>, cross-validation, and ROC/AUC evaluation.</p><div class="keywords"><span>R</span><span>glmnet</span><span>LASSO</span><span>Classification</span><span>Cross-validation</span></div><div class="actions"><a class="button" href="https://github.com/XinZeng-may/XinZeng-may/blob/main/Using%20Lasso%20to%20predict%20happiness.R" target="_blank" rel="noopener noreferrer">View R source ↗</a></div></div></article>
@@ -56,14 +75,7 @@
 <footer class="bottom"><div class="wrap"><span>© <span id="year">2026</span> May Zeng · Made with curiosity ♡</span><span>Designed & built with a little AI assistance.</span></div></footer>
 <script>
 (function(){
-const buttons=[...document.querySelectorAll("[data-filter]")];
-const projects=[...document.querySelectorAll("[data-category]")];
-function filter(value){
- buttons.forEach(function(btn){btn.setAttribute("aria-pressed",String(btn.dataset.filter===value));});
- projects.forEach(function(card){card.hidden=value!=="all"&&card.dataset.category!==value;});
-}
-buttons.forEach(function(btn){btn.addEventListener("click",function(){filter(btn.dataset.filter);});});
-document.querySelectorAll("[data-track-link]").forEach(function(a){a.addEventListener("click",function(){filter(a.dataset.trackLink);});});
+
 document.getElementById("year").textContent=new Date().getFullYear();
 })();
 </script>
