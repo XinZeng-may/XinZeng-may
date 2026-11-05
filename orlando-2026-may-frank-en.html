@@ -147,6 +147,7 @@ const storeKey='orlando-days-2026-v4';let state={};try{state=JSON.parse(localSto
 function defaults(){let a={};Object.values(rides).forEach(r=>{a[r.id]={me:!!r.me,him:!!r.him,done:false}});return a}
 let packing=Object.assign({},state.packing||{});let packFilter='all';
 let choices=Object.assign(defaults(),state.choices||{}); Object.keys(defaults()).forEach(k=>choices[k]={...defaults()[k],...(choices[k]||{})});
+if(!state.choices){for(const id of (DATA.recordedDone||[])){if(choices[id])choices[id].done=true}} // seed verified actual rides for first-time visitors only
 function save(){try{localStorage.setItem(storeKey,JSON.stringify({choices,packing}))}catch(e){};renderCount()}
 function toggleRide(id,person){if(!choices[id])return;choices[id][person]=!choices[id][person];save();renderDay();renderPicks();if(activeRide===id)openRide(id)}
 function toggleDone(id){if(!choices[id])return;choices[id].done=!choices[id].done;save();renderDay();renderPicks();if(activeRide===id)openRide(id)}
